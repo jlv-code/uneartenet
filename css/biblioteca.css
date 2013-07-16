@@ -1,0 +1,168 @@
+/* ESTILOS DEL MODULO BIBLIOTECA DE LA INTRANET */
+
+#panelLeft{
+	float:left;
+	width:30%;
+	overflow-y: scroll;
+	background:#EFEFEF;
+}
+
+#contenidoForm {
+	float: left;
+	padding:3px 2px;
+	width: 98%;
+}
+
+#parteAlta{
+    position: relative;
+    FLOAT: left;
+    width: 100%;
+    height: auto;
+    background: #FFF;
+    border-top: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+    border-left: 1px solid #CCC;
+
+}
+#parteAltaIzq{
+    FLOAT: left;
+    width: 76px;
+    height: 100%;
+    background:#CCC;    
+}
+
+#parteAltaIzqVerLibro{
+    FLOAT: left;
+    width: 30%;
+    height: 100%;
+}
+
+#parteAltaDerVerLibro{
+    FLOAT: left;
+	width: 68%;
+	height: 98%;
+	padding: 2px 3px;
+}
+
+#parteBajaVerLibro{
+	border-bottom: 1px solid #9AB;
+    border-top: 1px solid #9AB;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    float: left;
+    height: auto;
+    position: relative;
+    width: 100%;
+
+}
+
+.fotoEdicionLibro{
+    FLOAT: left;
+    width: 100%;
+    min-height: 120px;
+    margin: 2px;
+	background: #efefef;
+	padding: 0px 3px 0px 0px;
+}
+
+.datosLibro{
+    FLOAT: left;
+    width: 100%;
+    min-height: 18px;
+    margin: 1px 0 1px 4px;
+    FONT-SIZE: 11px;
+}
+
+#biblio_titulo{
+	font-weight: bold;
+	text-shadow: #DDD 1px 1px 1px;
+	font-size:14px !important;
+	color:#333;
+	text-transform: uppercase;
+}
+
+#biblio_ano, #biblio_editoriales, #biblio_idioma{
+	font-weight: bold;
+	text-shadow: #DDD 1px 1px 1px;
+	color:#000;
+} 
+
+#biblio_impreso, #biblio_medida, #biblio_paginas, #biblio_ejemplares, #biblio_centros, #biblio_referencia{
+	font-weight: bold;
+	text-shadow: #DDD 1px 1px 1px;
+	font-size:14px;
+	color:#000;
+} 
+
+#biblio_titulos{
+	padding: 1px 18px 1px 10px;
+	margin: 0 -3px;
+	font-size: 13px;
+	overflow-y: scroll;
+	font-size: 12px;
+    font-weight: normal;
+
+}
+
+#biblio_resumen{
+	padding: 1px 18px 1px 10px;
+	margin: 0 -3px;
+	font-size: 11px;
+	overflow-y: scroll;
+	font-size: 12px;
+    font-weight: normal;
+	text-align: justify;
+	text-indent: 1cm;
+	--border: 1px dotted gray; 
+	line-height: 200%;
+	border: solid 1px #DDD;
+	background: #fff; /* FF3.6+ */
+}
+
+#biblio_title{
+	border-bottom: 1px solid #FFFFFF;
+    color: #fff;
+    font-weight: bold;
+    padding: 7px 3px;
+    text-shadow: 1px 1px 1px #000000;
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(-45deg, #45484d 0%, #232323 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#45484d), color-stop(100%,#232323)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg, #45484d 0%,#232323 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg, #45484d 0%,#232323 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg, #45484d 0%,#232323 100%); /* IE10+ */
+	background: linear-gradient(-45deg, #45484d 0%,#232323 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#232323',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */}
+
+#biblio_materias{
+	margin: 5px 3px;
+	text-shadow: #DDD 1px 1px 1px;
+	color: #4646B9;
+	font-size: 13px;
+}
+
+#biblio_cota{
+	text-shadow: #DDD 1px 1px 1px;
+	color: #4646B9;
+}
+
+.titleHead{
+	float:left;
+	--border-bottom: 1px solid #99AAEE;
+    color: #45484D;
+    font-size: 12px;
+    padding: 2px 2px;
+    text-shadow: 1px 1px 1px #DDDDDD;
+    width: 99%;
+    font-weight: bold;
+}
+
+.titleHead2{
+	float:left;
+    color: #45484D;
+    font-size: 12px;
+    padding: 2px 3px;
+    text-shadow: 1px 1px 1px #DDDDDD;
+    width: 99%;
+    font-weight: bold;
+}

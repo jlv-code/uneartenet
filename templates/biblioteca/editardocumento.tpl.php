@@ -1,0 +1,352 @@
+<script type="text/javascript">
+function editardocumento(d,rcd){	
+	var idrcd = parseInt(rcd.id.slice(5,rcd.id.length));
+	var idDocumento = document.getElementById('idcota_imagen'+idrcd);
+	var indexRecord = 0;
+	
+	$.each(d,function(i,rcd){
+		if(rcd.cota == idDocumento.innerHTML){
+			indexRecord = i;
+		}
+	});
+	var record = d[indexRecord];
+	var idemAutores = new Array();
+		idemAutores = record.idemautores.split(',');
+	var idemMaterias = new Array();
+		idemMaterias = record.idemmaterias.split(',');
+	var idemEditoriales = new Array();
+		idemEditoriales = record.idemeditoriales.split(',');
+	
+	$('#gridFormContent').nForm({
+			id:'formulario',
+			title: 'Editar Documento',
+			ncol: 3,
+			fields: [
+				{	tag:'input', col:1,attr: { id:'action',	name:'action', type:'hidden', }, },
+				{	tag:'input',
+					col:1,
+					attr: {
+						id:'module',
+						name:'mod',
+						type:'hidden',
+					},
+				},
+				{	label:'CENTRO Y/O UBICACIÓN',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'idcentro',
+						name:'unidadorganizativa',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qCentro());?>,
+				},
+				{	label:'Foto',
+					tag:'input',
+					col:1,
+					attr: {
+						id:'cota_imagen',
+						name:'cota_imagen',
+						type:'file',
+						className:'inputField',
+					},
+				},
+				{	label:'Tipo de Documento',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'responsableobra',
+						name:'responsableobra',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qTipoDocumento());?>,
+				},
+				{	label:'# de Ejemplares',
+					tag:'input',
+					col:3,
+					attr: {
+						id:'ejemplares',
+						name:'ejemplares',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Cota',
+					tag:'input',
+					col:3,
+					attr: {
+						id:'cota',
+						name:'cota',
+						type:'text',
+						//readOnly:true,
+						className:'inputField',
+					},
+				},
+				{	label:'Número de Referencia',
+					tag:'input',
+					col:3,
+					attr: {
+						id:'nroreferencia',
+						name:'nroreferencia',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Título del Documento',
+					tag:'input',
+					col:2,
+					attr: {
+						id:'titulo',
+						name:'titulo',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Título Traducido',
+					tag:'input',
+					col:2,
+					attr: {
+						id:'titulotraducido',
+						name:'titulotraducido',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Autores',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'idemautores',
+						name:'idemautores',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qAutores());?>,
+				},
+				{	label:'Descriptores',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'idemmaterias',
+						name:'idemmaterias',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qMaterias());?>,
+				},
+				{	label:'Editoriales',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'idemeditoriales',
+						name:'idemeditoriales',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qEditoriales());?>,
+				},
+				{	label:'Año de Publicación',
+					tag:'input',
+					col:2,
+					attr: {
+						id:'ano',
+						name:'ano',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Número de Edición',
+					tag:'input',
+					col:2,
+					attr: {
+						id:'edicion',
+						name:'edicion',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Serie o Colección',
+					tag:'input',
+					col:2,
+					attr: {
+						id:'serie',
+						name:'serie',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'I.S.B.N',
+					tag:'input',
+					col:2,
+					attr: {
+						id:'isbn',
+						name:'isbn',
+						type:'text',
+						className:'inputField',
+					},
+				},
+				{	label:'Tipo de Impresión',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'idtipoimpresion',
+						name:'idtipoimpresion',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qTipoImpresion());?>,
+				},
+				{	label:'Fecha de adquisición',
+					tag:'input',
+					col:1,
+					attr: {
+						id:'fechaadquisicion',
+						name:'fechaadquisicion',
+						type:'dates',
+						className:'inputField',
+					},
+				},
+				{	label:'Forma de Adquisición',
+					tag:'select',
+					col:2,
+					attr: {
+						id:'idformaadquisicion',
+						name:'idformaadquisicion',
+						className:'inputField',
+					},
+					list:<?php print json_encode($biblioteca->qFormaAdquisicion());?>,
+				},
+
+				/*{label:'País',name:'pais',typeOf:'text', value:record.pais},
+				{label:'Ciudad',name:'ciudad',typeOf:'text', value:record.ciudad},
+				{label:'Idioma',name:'idioma',typeOf:'text', value:record.idioma},
+				{label:'Número de páginas',name:'nropaginas',typeOf:'text', value:record.nropaginas},
+				{label:'Tamaño (Alto x Ancho CM)',name:'tamano',typeOf:'text', value:record.tamano},
+				{label:'Volúmenes',name:'volumenes',typeOf:'text', value:record.volumenes},
+				{label:'Mes de Publicación',name:'mes_ano',typeOf:'text', value:record.mes_ano},
+				{label:'Número de Publicación',name:'numero',typeOf:'text', value:record.numero},
+				{label:'Periocidad',name:'periocidad',typeOf:'text', value:record.periocidad},
+				{label:'I.S.S.N.',name:'issn',typeOf:'text', value:record.issn},
+				{label:'Sistema',name:'sistema',typeOf:'text', value:record.sistema},
+				{label:'Formato',name:'formato',typeOf:'text', value:record.formato},
+				{label:'Resumen',name:'resumen',typeOf:'textarea',col:80,row:10, disabled:true, value:record.resumen },
+				{label:'Agregar PDF',name:'cota_imagen',typeOf:'file',width:'150px',multiple:true},
+				{label:'Fecha',name:'fecha', typeOf:'hidden', value:<?php print "'".date('d-m-Y, H:i:s')."'"; ?>},*/
+				
+				/*{	label:'Fecha de Ejecución',
+					tag:'input',
+					col:1,
+					attr: {
+						id:'fechaeje',
+						name:'fechaeje',
+						type:'dates',
+						className:'inputField',
+					},
+				},
+				{	label:'Tipificacion de Solicitud',
+					tag:'select',
+					col:1,
+					attr: {
+						id:'tipificacion',
+						name:'tipificacion',
+						className:'inputField',
+					},
+					list:<?php print json_encode($tipificacion); ?>,
+				},
+				{	label:'Status de Solicitud',
+					tag:'select',
+					col:1,
+					attr: {
+						id:'status',
+						name:'status',
+						className:'inputField',
+					},
+					list:<?php print json_encode($statusSolicitudes); ?>,
+				},
+				{	label:'Observación',
+					tag:'textarea',
+					col:1,
+					attr: {
+						id:'observacion',
+						name:'observacion',
+						className:'inputField',
+					},
+				},
+				{	label:'Actividades',
+					tag:'select',
+					col:1,
+					attr: {
+						id:'actividades',
+						name:'actividades[]',
+						className:'inputField',
+						multiple:true,
+					},
+					list:<?php print json_encode($actividades); ?>,
+				},*/
+			],
+			buttons: [
+				{
+					label:'Guardar Solicitud',
+					action: 'send',
+				}
+			],
+		});	
+	/*$('#gridForm').nForm({
+		id: 'formEditarDocumento',
+		title: 'Editar Documento',
+		ncol: 1,
+		idDivInclude: 'gridFormContent',
+		useStyle: 'chosen',		
+		method: 'post',
+		url: '<?php print urlAjaxM; ?>',
+		module: '<?php print $fileNameModule; ?>',
+		dataType: 'text',
+		fields: [
+				//{label:'Foto',name:'cota_imagen',typeOf:'img',width:'150px',multiple:true},
+				--{label:'CENTRO Y/O UBICACIÓN',name:'idcentro',typeOf:'select',value:record.idcentro,list:<?php print json_encode($biblioteca->qCentro());?>},
+				--{label:'Foto',name:'cota_imagen',typeOf:'file',width:'150px',multiple:true},
+				--{label:'Tipo de Documento',name:'idtipodocumento',typeOf:'select',value:record.idtipodocumento,list:<?php print json_encode($biblioteca->qTipoDocumento());?>},
+				//{name:'Cota',typeOf:'hidden',value:record.cota},
+				--{label:'# de Ejemplares',name:'ejemplares',typeOf:'text', value:record.ejemplares},
+				--{label:'Cota',name:'titulo',typeOf:'text', value:record.cota},
+				--{label:'Número de Referencia',name:'nroreferencia',typeOf:'text', value:record.nroreferencia},
+				--{label:'Título del Documento',name:'titulo',typeOf:'textarea',col:40,row:5, disabled:true, value:record.titulo },
+				--{label:'Título Traducido',name:'titulotraducido',typeOf:'textarea',col:40,row:5, disabled:true, value:record.titulotraducido },
+				--{label:'Autores',name:'idemautores',typeOf:'select',w:'300px',multiple:true, value:idemAutores,list:<?php print json_encode($biblioteca->qAutores());?>},
+				--{label:'Descriptores',name:'idemmaterias',typeOf:'select',w:'300px',multiple:true, value:idemMaterias,list:<?php print json_encode($biblioteca->qMaterias());?>},
+				--{label:'Editoriales',name:'idemeditoriales',typeOf:'select',w:'300px',multiple:true, value:idemEditoriales,list:<?php print json_encode($biblioteca->qEditoriales());?>},
+				--{label:'Año de Publicación',name:'ano',typeOf:'text', value:record.ano},
+				-{label:'Número de Edición',name:'edicion',typeOf:'text', value:record.edicion},
+				-{label:'Serie o Colección',name:'serie',typeOf:'text', value:record.serie},
+				-{label:'I.S.B.N',name:'isbn',typeOf:'text', value:record.isbn},
+				//{label:'Título del documento',name:'titulo',typeOf:'text', value:record.titulo},
+				{label:'Tipo de Impresión',name:'idtipoimpresion',typeOf:'select',value:record.idtipoimpresion,list:<?php print json_encode($biblioteca->qTipoImpresion());?>},
+				{label:'Fecha de adquisición',name:'fechaadquisicion', typeOf:'dates', value:record.fechaadquisicion},
+				{label:'Forma de Adquisición',name:'idformaadquisicion',typeOf:'select',value:record.idformaadquisicion,list:<?php print json_encode($biblioteca->qFormaAdquisicion());?>},
+				{label:'País',name:'pais',typeOf:'text', value:record.pais},
+				{label:'Ciudad',name:'ciudad',typeOf:'text', value:record.ciudad},
+				{label:'Idioma',name:'idioma',typeOf:'text', value:record.idioma},
+				{label:'Número de páginas',name:'nropaginas',typeOf:'text', value:record.nropaginas},
+				{label:'Tamaño (Alto x Ancho CM)',name:'tamano',typeOf:'text', value:record.tamano},
+				{label:'Volúmenes',name:'volumenes',typeOf:'text', value:record.volumenes},
+				{label:'Mes de Publicación',name:'mes_ano',typeOf:'text', value:record.mes_ano},
+				{label:'Número de Publicación',name:'numero',typeOf:'text', value:record.numero},
+				{label:'Periocidad',name:'periocidad',typeOf:'text', value:record.periocidad},
+				{label:'I.S.S.N.',name:'issn',typeOf:'text', value:record.issn},
+				{label:'Sistema',name:'sistema',typeOf:'text', value:record.sistema},
+				{label:'Formato',name:'formato',typeOf:'text', value:record.formato},
+				{label:'Resumen',name:'resumen',typeOf:'textarea',col:80,row:10, disabled:true, value:record.resumen },
+				{label:'Agregar PDF',name:'cota_imagen',typeOf:'file',width:'150px',multiple:true},
+				
+				{label:'Fecha',name:'fecha', typeOf:'hidden', value:<?php print "'".date('d-m-Y, H:i:s')."'"; ?>},
+				//{name:'tipomultimedia',typeOf:'hidden',value:2},	
+				
+				]
+		onSuccess: function(response){
+			if (response==true) {
+				$.fsendMessage('granted','¡Se ha actualizado satisfactoriamente el registro!',function(){
+					javascript:location.reload();
+				});
+			} else {
+				$.fsendMessage('denied','Existe un error en los datos. Por favor verifiquelos');
+			}
+		},		
+	});*/
+}
+</script>

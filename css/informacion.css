@@ -1,0 +1,35 @@
+#panelRight{
+	float: left;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+/* ESTILOS DEL PANEL RIGHT DE NOTICIAS */
+#noticia_titulo{
+    width: 600px!important;
+    margin: 15px;
+	color: #500;
+	font-weight: bold; 
+	font-size: 14px;
+}
+#noticia_descripcion{
+    height:auto;     
+    text-align:justify;
+    width: 600px!important;
+    margin:15px 0 0 15px;
+}
+
+#noticia_img{
+    float: left;
+    max-width: 280px;
+	height: auto;
+	padding:5px;
+}
+
+#noticia_categoria, #noticia_fecha, #noticia_autor{
+    margin: 0 0 0 15px;
+}
+
+#noticia_categoria{
+    margin: 15px 0 0 15px;
+} 

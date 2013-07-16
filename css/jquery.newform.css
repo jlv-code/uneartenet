@@ -1,0 +1,222 @@
+/* ESTILOS DE LOS FORMULARIOS
+ */
+#wrapForm {
+ 	margin: 0 auto;
+ 	padding: 0;
+ 	float: left;
+ 	width: 100%;
+}
+
+.form{
+	margin: 0 auto;
+	padding: 0;
+	float: left; 
+	width: auto;
+}
+
+.formCol {
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#titleForm {
+	margin: 0 auto;
+	padding: 0 5px 0 5px;
+	height: 18px;
+	color: #500;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.formDivField {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+
+.formDivField {
+	padding: 3px;
+	float: left;
+}
+
+.lblField {
+ 	margin: 0;
+ 	padding: 8px 4px 4px 4px;
+ 	float: left;
+ 	width: 34%;
+ 	min-height: 15px;
+}
+.wrapInput{
+	float:left;
+	width:64%;
+}
+
+.lblFMultiple {
+	margin: 0 10px 0 3px;
+	padding: 0;
+}
+
+.inputField {
+ 	margin: 3px;
+ 	padding: 3px;
+ 	border: 1px solid #bbb;
+ 	background: #fff;
+}
+
+.inputFMultiple {
+	margin: 5px 0 0 0;
+	padding: 3px;
+}
+
+.selectField {
+	margin: 3px;
+ 	padding: 3px;
+ 	border: 1px solid #bbb;
+}
+
+.chzn-container {
+	margin: 2px 0 0 3px;
+}
+
+.divSet {
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 261px;
+}
+
+.btnsForm {
+	margin: 0;
+	padding: 5px;
+	float: left;
+	width: 99.5%;
+	height: 28px;
+	background: #eee;
+}
+
+.aButton {
+	margin: 0 0 0 5px;
+	padding: 5px 10px;
+	float: right;
+	width: auto;
+	text-align: center;
+	color: #555;
+	border: 1px solid #bbb;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+.aButton:hover {
+	cursor: pointer;
+	background-color: #ddd;
+}
+
+.inputFile {
+	margin: 0;
+	padding: 5px 10px;
+	float: right;
+	width: auto;
+	text-align: center;
+	color: #555;
+	border: 1px solid #bbb;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+.btnAdd {
+	color: #399;
+	border: 1px solid #399;
+	background-color: #eff;
+}
+
+.btnDel {
+	margin: 0 5px 0 0;
+	padding: 0 5px;
+	color: #833;
+	border: 1px solid #833;
+	background-color: #fee;
+}
+
+.btnDel:hover {
+	background-color: #dcc;
+}
+
+.btnDelAll {
+	color: #833;
+	border: 1px solid #833;
+	background-color: #fee;
+}
+
+.btnDelAll:hover {
+	background-color: #edd;
+}
+
+.btnDelAllIL {
+	margin: 0 0 0 8px;
+	float: left;
+	color: #833;
+	border: 1px solid #833;
+	background-color: #fee;
+}
+
+.btnDelAllIL:hover {
+	background-color: #edd;
+}
+
+.btnAddAllIL {
+	margin: 0 0 0 8px;
+	float: left;
+	color: #399;
+	border: 1px solid #399;
+	background-color: #eff;
+}
+
+.btnAddAllIL:hover {
+	background-color: #dee;
+}
+
+#listOfImgs {
+	margin-top: 1px;
+	width: 99%;
+}
+
+.imgToUpload {
+	margin: 1px 0 0 0;
+	padding: 5px;
+	float: left;
+	width: 99%;
+	background: #eee;
+	border-left: 1px solid #ccc;
+}
+
+.imgLoaded {
+	margin: 1px 0 0 0;
+	padding: 5px;
+	float: left;
+	width: 99%;
+	background: #eee;
+	border-left: 1px solid #ccc;
+}
+
+#listOfImgsLoaded {
+	margin-top: 1px;
+	width: 99%;	
+}
+
+.btnAddIL {
+	margin: 0 5px 0 0;
+	padding: 0 5px;
+	color: #399;
+	border: 1px solid #399;
+	background-color: #eff;
+}
+
+.btnDelIL {
+	margin: 0 5px 0 0;
+	padding: 0 5px;
+	color: #833;
+	border: 1px solid #833;
+	background-color: #fee;
+}
